@@ -33,6 +33,7 @@
     "preview": "vite preview"
   },
   "devDependencies": {
+    "@nabla/vite-plugin-eslint": "^2.0.4",
     "eslint": "^8.57.0",
     "eslint-config-love": "^48.0.0",
     "typescript": "^5.4.5",
