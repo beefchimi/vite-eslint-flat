@@ -1,10 +1,12 @@
 import configLove from 'eslint-config-love'
 
 export default [
-  configLove,
   {
+    ...configLove,
+    files: ["src/**/*.{ts,js}"],
     rules: {
-      'no-console': 'error'
+      ...configLove.rules,
+      'no-console': 'error',
     }
   }
 ]
