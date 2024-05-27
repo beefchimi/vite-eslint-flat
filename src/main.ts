@@ -1,8 +1,12 @@
-import './style.css'
-import typescriptLogo from './typescript.svg'
-import viteLogo from '/vite.svg'
-import { setupCounter } from './counter.ts'
+import './style.css';
 
+import {setupCounter} from './counter.ts';
+
+// eslint-disable-next-line import/no-absolute-path
+import viteLogo from '/vite.svg';
+import typescriptLogo from './typescript.svg';
+
+// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
   <div>
     <a href="https://vitejs.dev" target="_blank">
@@ -19,6 +23,7 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
       Click on the Vite and TypeScript logos to learn more
     </p>
   </div>
-`
+`;
 
-setupCounter(document.querySelector<HTMLButtonElement>('#counter')!)
+// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+setupCounter(document.querySelector<HTMLButtonElement>('#counter')!);
