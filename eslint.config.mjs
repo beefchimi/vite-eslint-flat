@@ -1,25 +1,28 @@
-import configLove from 'eslint-config-love'
+import globals from 'globals';
+import configLove from 'eslint-config-love';
+// Includes both `config` and `plugin`.
+import pluginPrettier from 'eslint-plugin-prettier/recommended';
 
 export default [
   {
-    ...configLove,
-    files: ["src/**/*.{ts,js}"],
-    rules: {
-      ...configLove.rules,
-      'no-console': 'error',
-    }
-  }
-]
-
-/*
+    ignores: ['coverage/**', 'dist/**'],
+  },
+  configLove,
+  pluginPrettier,
   {
+    name: 'custom-rules',
+    files: ['**/*.ts', '**/*.js', '**/*.mjs'],
     languageOptions: {
-      sourceType: "module",
+      ...configLove.languageOptions,
+      globals: {
+        ...globals.browser,
+      },
+      ecmaVersion: 2022,
+      sourceType: 'module',
     },
-    ignores: ["coverage/*", "dist/*"],
-    files: ["*.js", "*.ts"],
     rules: {
-      "no-console": "error",
+      'no-console': 'warn',
+      '@typescript-eslint/explicit-function-return-type': 'off',
     },
   },
-*/
+];
